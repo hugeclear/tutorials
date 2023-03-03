@@ -1,0 +1,118 @@
+# This file created by conda-build 3.20.4
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/scikit-image-0.17.2-python_3.8-on-linux_64, last modified Mon Oct 19 16:45:27 2020
+# ------------------------------------------------
+
+package:
+    name: scikit-image
+    version: 0.17.2
+source:
+    sha256: bd954c0588f0f7e81d9763dc95e06950e68247d540476e06cb77bcbcd8c2d8b3
+    url: https://pypi.io/packages/source/s/scikit-image/scikit-image-0.17.2.tar.gz
+build:
+    entry_points:
+        - skivi = skimage.scripts.skivi:main
+    number: '0'
+    script:
+        - rm -rf skimage/viewer/tests
+        - rm -f pyproject.toml
+        - /tmp/build/80754af9/scikit-image_1603274451316/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/bin/python
+            setup.py build_ext -j2
+        - /tmp/build/80754af9/scikit-image_1603274451316/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_p/bin/python
+            setup.py install --single-version-externally-managed --record record.txt
+    string: py38hdf5156a_0
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - gxx_impl_linux-64 7.3.0 hdf63c60_1
+        - gxx_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - blas 1.0 mkl
+        - ca-certificates 2020.10.14 0
+        - certifi 2020.6.20 py38_0
+        - cython 0.29.21 py38he6710b0_0
+        - intel-openmp 2020.2 254
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libgfortran-ng 7.3.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - mkl 2020.2 256
+        - mkl-service 2.3.0 py38he904b0f_0
+        - mkl_fft 1.2.0 py38h23d657b_0
+        - mkl_random 1.1.1 py38h0573a6f_0
+        - ncurses 6.2 he6710b0_1
+        - numpy 1.16.6 py38hbc911f0_0
+        - numpy-base 1.16.6 py38hde5b4d6_0
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.4 py38_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 50.3.0 py38hb0f4dca_1
+        - six 1.15.0 py_0
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - cloudpickle >=0.2.1
+        - cytoolz >=0.7.3
+        - dask-core >=0.15.0
+        - imageio >=2.3.0
+        - libgcc-ng >=7.3.0
+        - libstdcxx-ng >=7.3.0
+        - matplotlib-base >=2.0.0
+        - networkx >=2.0
+        - numpy >=1.16.6,<2.0a0
+        - pillow >=4.3.0
+        - python >=3.8,<3.9.0a0
+        - pywavelets >=0.4.0
+        - scipy >=0.19
+        - tifffile >=2019.7.26
+        - toolz >=0.7.3
+    run_constrained:
+        - pooch >=0.5.2
+test:
+    commands:
+        - export MPLBACKEND=Agg
+        - SKIMAGE_TEST_STRICT_WARNINGS=0 pytest --pyargs skimage -k "not (_not_a_real_test)"
+    imports:
+        - skimage
+    requires:
+        - pytest
+        - pytest-localserver
+about:
+    description: 'scikit-image is a collection of algorithms for image processing.
+
+        It is available free of charge and free of restriction.
+
+        We pride ourselves on high-quality, peer-reviewed code,
+
+        written by an active community of volunteers.
+
+        '
+    home: http://scikit-image.org/
+    license: BSD-3-Clause
+    license_file: LICENSE.txt
+    summary: Image processing in Python.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - emmanuelle
+        - hmaarrfk
+        - jakirkham
+        - jni
+        - msarahan
+        - ocefpaf
+        - soupault

@@ -1,0 +1,79 @@
+# This file created by conda-build 3.18.11
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/secretstorage-3.1.2-python_3.8-on-linux_64, last modified Mon Jan 27 19:31:40 2020
+# ------------------------------------------------
+
+package:
+    name: secretstorage
+    version: 3.1.2
+source:
+    sha256: 15da8a989b65498e29be338b3b279965f1b8f09b9668bd8010da183024c8bff6
+    url: https://pypi.io/packages/source/S/SecretStorage/SecretStorage-3.1.2.tar.gz
+build:
+    number: '0'
+    script: /tmp/build/80754af9/secretstorage_1580153920812/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_/bin/python
+        -m pip install . --no-deps --ignore-installed --no-cache-dir -vvv
+    string: py38_0
+requirements:
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2019.11.27 0
+        - certifi 2019.11.28 py38_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20181209 hc058e9b_0
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.1 he6710b0_1
+        - openssl 1.1.1d h7b6447c_3
+        - pip 19.3.1 py38_0
+        - python 3.8.1 h0371630_1
+        - readline 7.0 h7b6447c_5
+        - setuptools 44.0.0 py38_0
+        - sqlite 3.30.1 h7b6447c_0
+        - tk 8.6.8 hbc83047_0
+        - wheel 0.33.6 py38_0
+        - xz 5.2.4 h14c3975_4
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - cryptography
+        - dbus
+        - jeepney
+        - python >=3.8,<3.9.0a0
+test:
+    imports:
+        - secretstorage
+about:
+    description: 'This module provides a way for securely storing passwords and other
+        secrets.
+
+        It uses D-Bus Secret Service API that is supported by GNOME Keyring (since
+
+        version 2.30) and KSecretsService.
+
+        The main classes provided are secretstorage.Item, representing a secret item
+
+        (that has a label, a secret and some attributes) and secretstorage.Collection,
+
+        a place items are stored in.
+
+        SecretStorage supports most of the functions provided by Secret Service,
+
+        including creating and deleting items and collections, editing items, locking
+
+        and unlocking collections (asynchronous unlocking is also supported).
+
+        '
+    dev_url: https://github.com/mitya57/secretstorage
+    doc_url: https://secretstorage.readthedocs.io/en/latest/
+    home: https://github.com/mitya57/secretstorage
+    license: BSD-3-Clause
+    license_family: BSD
+    license_file: LICENSE
+    summary: Provides a way for securely storing passwords and other secrets.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - CurtLH
+        - ccordoba12

@@ -1,0 +1,98 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Wed Sep 30 21:32:31 2020
+# ------------------------------------------------
+
+package:
+    name: notebook
+    version: 6.1.4
+source:
+    sha256: 687d01f963ea20360c0b904ee7a37c3d8cda553858c8d6e33fd0afd13e89de32
+    url: https://pypi.io/packages/source/n/notebook/notebook-6.1.4.tar.gz
+build:
+    entry_points:
+        - jupyter-bundlerextension = notebook.bundler.bundlerextensions:main
+        - jupyter-nbextension = notebook.nbextensions:main
+        - jupyter-notebook = notebook.notebookapp:main
+        - jupyter-serverextension = notebook.serverextensions:main
+    number: '0'
+    string: py38_0
+requirements:
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.7.22 0
+        - certifi 2020.6.20 py38_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.2 py38_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 49.6.0 py38_1
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - argon2-cffi
+        - ipykernel
+        - ipython_genutils
+        - jinja2
+        - jupyter_client >=5.3.4
+        - jupyter_core >=4.6.1
+        - nbconvert
+        - nbformat
+        - prometheus_client
+        - python >=3.8,<3.9.0a0
+        - pyzmq >=17
+        - send2trash
+        - terminado >=0.8.1
+        - tornado >=5.0
+        - traitlets >=4.2.1
+test:
+    commands:
+        - python -m pip check
+        - jupyter notebook -h
+        - jupyter nbextension -h
+        - jupyter serverextension -h
+        - jupyter bundlerextension -h
+    imports:
+        - notebook
+    requires:
+        - pip
+app:
+    cli_opts:
+        -   args: --port %s
+            default: '8080'
+            name: port
+            summary: Server port ...
+    entry: jupyter-notebook
+    icon: jupyter.png
+    summary: Jupyter Notebook
+    type: web
+about:
+    dev_url: https://github.com/jupyter/notebook
+    doc_source_url: https://github.com/jupyter/notebook/tree/master/docs
+    doc_url: https://jupyter-notebook.readthedocs.io
+    home: https://jupyter.org
+    license: BSD-3-Clause
+    license_family: BSD
+    license_file: LICENSE
+    summary: A web-based notebook environment for interactive computing
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - SylvainCorlay
+        - bollwyvl
+        - gnestor
+        - jakirkham
+        - lresende
+        - minrk
+        - pelson
+        - takluyver

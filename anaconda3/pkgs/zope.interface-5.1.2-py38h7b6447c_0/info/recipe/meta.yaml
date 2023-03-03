@@ -1,0 +1,86 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Tue Oct  6 16:39:56 2020
+# ------------------------------------------------
+
+package:
+    name: zope.interface
+    version: 5.1.2
+source:
+    sha256: c9c8e53a5472b77f6a391b515c771105011f4b40740ce53af8428d1c8ca20004
+    url: https://pypi.io/packages/source/z/zope.interface/zope.interface-5.1.2.tar.gz
+build:
+    number: '0'
+    script: /tmp/build/80754af9/zope.interface_1602002420968/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold/bin/python
+        -m pip install . -vv
+    string: py38h7b6447c_0
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.7.22 0
+        - certifi 2020.6.20 py38_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.3 py38_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 50.3.0 py38hb0f4dca_1
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+        - zope 1.0 py38_1
+    run:
+        - libgcc-ng >=7.3.0
+        - python >=3.8,<3.9.0a0
+        - setuptools
+        - zope
+test:
+    commands:
+        - pip check
+    imports:
+        - zope
+        - zope.interface
+        - zope.interface._zope_interface_coptimizations
+        - zope.interface.common
+        - zope.interface.common.mapping
+        - zope.interface.common.tests
+        - zope.interface.tests
+    requires:
+        - pip
+about:
+    description: 'Provides an implementation of object interfaces for Python.Interfaces
+        are objects
+
+        that specify the external behavior of objects that provide them.
+
+        '
+    dev_url: https://github.com/zopefoundation/zope.interface
+    doc_source_url: https://github.com/zopefoundation/zope.interface//blob/master/docs/index.rst
+    doc_url: http://docs.zope.org/zope.interface/
+    home: http://docs.zope.org/zope.interface/
+    license: ZPL-2.1
+    license_family: Other
+    license_file: LICENSE.txt
+    summary: Interfaces for Python
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - isuruf
+        - ocefpaf

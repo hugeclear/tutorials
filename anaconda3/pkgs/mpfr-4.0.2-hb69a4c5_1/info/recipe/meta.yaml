@@ -1,0 +1,62 @@
+# This file created by conda-build 3.18.11
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/mpfr-4.0.2-on-linux_64, last modified Thu Jun 25 20:00:42 2020
+# ------------------------------------------------
+
+package:
+    name: mpfr
+    version: 4.0.2
+source:
+    fn: mpfr-4.0.2.tar.bz2
+    patches:
+        - patches/build-vc14.patch
+        - patches/corei5.patch
+    sha256: ae26cace63a498f07047a784cd3b0e4d010b44d2b193bab82af693de57a19a78
+    url: http://ftp.gnu.org/gnu/mpfr/mpfr-4.0.2.tar.gz
+build:
+    number: '1'
+    run_exports:
+        - mpfr >=4.0.2,<5.0a0
+    string: hb69a4c5_1
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - libtool 2.4.6 h7b6447c_5
+        - m4 1.4.18 h4e445db_0
+        - make 4.2.1 h1bed415_1
+    host:
+        - _libgcc_mutex 0.1 main
+        - gmp 6.1.2 h6c8ec71_1
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    run:
+        - gmp >=6.1.2
+        - libgcc-ng >=7.3.0
+test:
+    commands:
+        - test -f ${PREFIX}/lib/libmpfr.a
+        - test -f ${PREFIX}/lib/libmpfr${SHLIB_EXT}
+    requires:
+        - gcc_linux-64 7.3.0.*
+        - libtool
+        - m4
+about:
+    home: http://www.mpfr.org/
+    license: LGPL-3.0-only
+    license_file: /tmp/build/80754af9/mpfr_1593116120953/work/COPYING.LESSER
+    summary: The MPFR library is a C library for multiple-precision floating-point
+        computations with correct rounding.
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - isuruf
+        - jakirkham
+        - marcelotrevisani

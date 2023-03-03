@@ -1,0 +1,65 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Wed Sep 30 18:55:35 2020
+# ------------------------------------------------
+
+package:
+    name: libtool
+    version: 2.4.6
+source:
+    patches:
+        - 0001-link-as-needed.patch
+        - 0002-apple-silicon.patch
+        - 0003-apple-silicon.patch
+    sha256: e3bd4d5d3d025a36c21dd6af7ea818a2afcd4dfc1ea5a17b39d7854bcd0c06e3
+    url: http://ftpmirror.gnu.org/libtool/libtool-2.4.6.tar.gz
+build:
+    number: '1005'
+    string: h7b6447c_1005
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - autoconf 2.69 pl526hebd4dad_5
+        - automake 1.16.2 pl526_0
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - help2man 1.47.8 pl526h7b6447c_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - m4 1.4.18 h4e445db_0
+        - make 4.2.1 h1bed415_1
+        - perl 5.26.2 h14c3975_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - libgcc-ng 9.1.0 hdf63c60_0
+    run:
+        - libgcc-ng >=7.3.0
+test:
+    commands:
+        - libtool --help
+about:
+    description: 'GNU libtool is a generic library support script. Libtool hides the
+
+        complexity of using shared libraries behind a consistent, portable
+
+        interface.
+
+        '
+    dev_url: http://git.savannah.gnu.org/cgit/libtool.git
+    doc_url: http://www.gnu.org/software/libtool/manual/
+    home: http://www.gnu.org/software/libtool/
+    license: GPL-2.0-or-later
+    license_file: COPYING
+    summary: The GNU Portable Library Tool
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - isuruf
+        - jakirkham
+        - mingwandroid
+        - msarahan
+        - ocefpaf

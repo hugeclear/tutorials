@@ -1,0 +1,66 @@
+# This file created by conda-build 3.18.10
+# meta.yaml template originally from:
+# /tmp/build/80754af9/aggregate/gmpy2-feedstock/recipe, last modified Mon Nov  4 15:11:05 2019
+# ------------------------------------------------
+
+package:
+    name: gmpy2
+    version: 2.0.8
+source:
+    fn: gmpy2-2.0.8.zip
+    patches:
+        - 0001-Do-not-redefine-isnan-isinf.patch
+        - 0002-PySlice_GetIndicesEx-is-a-macro.patch
+    sha256: dd233e3288b90f21b0bb384bcc7a7e73557bb112ccf0032ad52aa614eb373d3f
+    url: https://pypi.io/packages/source/g/gmpy2/gmpy2-2.0.8.zip
+build:
+    number: '3'
+    script:
+        - python setup.py install --shared=$PREFIX
+    string: py38hd5f6e3b_3
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.31.1 h6176602_1
+        - binutils_linux-64 2.31.1 h6176602_8
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_8
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2019.10.16 0
+        - gmp 6.1.2 h6c8ec71_1
+        - libedit 3.1.20181209 hc058e9b_0
+        - libffi 3.2.1 hd88cf55_4
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - mpc 1.1.0 h10f8cd9_1
+        - mpfr 4.0.1 hdf1c602_3
+        - ncurses 6.1 he6710b0_1
+        - openssl 1.1.1d h7b6447c_3
+        - python 3.8.0 h0371630_1
+        - readline 7.0 h7b6447c_5
+        - sqlite 3.30.1 h7b6447c_0
+        - tk 8.6.8 hbc83047_0
+        - xz 5.2.4 h14c3975_4
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - gmp >=6.1.2
+        - libgcc-ng >=7.3.0
+        - mpc
+        - mpfr >=4.0.1,<5.0a0
+        - python >=3.8,<3.9.0a0
+test:
+    imports:
+        - gmpy2
+about:
+    home: https://pypi.python.org/pypi/gmpy2
+    license: LGPL 3
+    license_file: COPYING.LESSER
+    summary: GMP/MPIR, MPFR, and MPC interface to Python 2.6+ and 3.x
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - isuruf

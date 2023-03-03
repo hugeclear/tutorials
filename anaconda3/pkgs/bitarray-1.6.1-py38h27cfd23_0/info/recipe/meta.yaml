@@ -1,0 +1,73 @@
+# This file created by conda-build 3.20.5
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Wed Nov 11 03:24:50 2020
+# ------------------------------------------------
+
+package:
+    name: bitarray
+    version: 1.6.1
+source:
+    sha256: ab85b38365dd9956264226b30dababa02161ed49bb36c7ee82cc6545e07b1599
+    url: https://pypi.io/packages/source/b/bitarray/bitarray-1.6.1.tar.gz
+build:
+    number: '0'
+    script: /tmp/build/80754af9/bitarray_1605065113847/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place/bin/python
+        -m pip install . --no-deps -vv
+    string: py38h27cfd23_0
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.10.14 0
+        - certifi 2020.6.20 pyhd3eb1b0_3
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.4 py38h06a4308_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 50.3.1 py38h06a4308_1
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - libgcc-ng >=7.3.0
+        - python >=3.8,<3.9.0a0
+test:
+    imports:
+        - bitarray
+about:
+    description: 'Bitarray provides an object type which efficiently represents an
+        array of
+
+        booleans. Bitarrays are sequence types that behave very similarly
+
+        to usual lists. All functionality is implemented in C.
+
+        '
+    dev_url: https://github.com/ilanschnell/bitarray
+    doc_source_url: https://github.com/ilanschnell/bitarray/blob/master/README.rst
+    doc_url: https://pypi.python.org/pypi/bitarray/0.8.1
+    home: https://github.com/ilanschnell/bitarray
+    license: PSF
+    license_file: LICENSE
+    summary: efficient arrays of booleans -- C extension
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - nehaljwani

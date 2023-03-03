@@ -1,0 +1,68 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Thu Oct  1 15:28:19 2020
+# ------------------------------------------------
+
+package:
+    name: lz4-c
+    version: 1.9.2
+source:
+    fn: lz4-1.9.2.tar.gz
+    patches:
+        - patches/0001-Add-WindowsTargetPlatformVersion-of-10.0-and-lz4-exe.1.patch
+        - patches/0001-Add-WindowsTargetPlatformVersion-of-10.0-and-lz4-exe.2.patch
+    sha256: 658ba6191fa44c92280d4aa2c271b0f4fbc0e34d249578dd05e50e76d0e5efcc
+    url: https://github.com/lz4/lz4/archive/v1.9.2.tar.gz
+build:
+    number: '3'
+    run_exports:
+        - lz4-c >=1.9.2,<1.10.0a0
+    string: heb0550a_3
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - gxx_impl_linux-64 7.3.0 hdf63c60_1
+        - gxx_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - make 4.2.1 h1bed415_1
+        - patch 2.7.6 h7b6447c_1001
+    host:
+        - _libgcc_mutex 0.1 main
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    run:
+        - libgcc-ng >=7.3.0
+        - libstdcxx-ng >=7.3.0
+about:
+    description: 'LZ4 is lossless compression algorithm, providing compression speed
+        at 400
+
+        MB/s per core (0.16 Bytes/cycle). It features an extremely fast decoder,
+
+        with speed in multiple GB/s per core (0.71 Bytes/cycle). A high compression
+
+        derivative, called LZ4_HC, is available, trading customizable CPU time for
+
+        compression ratio. LZ4 library is provided as open source software using a
+
+        BSD license.
+
+        '
+    home: https://www.lz4.org
+    license: BSD-2-Clause
+    license_file: lib/LICENSE
+    summary: Extremely Fast Compression algorithm
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - mingwandroid
+        - rmax
+        - wesm
+        - xhochy

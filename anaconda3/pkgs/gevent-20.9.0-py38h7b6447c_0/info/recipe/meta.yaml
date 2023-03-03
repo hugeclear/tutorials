@@ -1,0 +1,90 @@
+# This file created by conda-build 3.20.2
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Tue Sep 29 16:38:32 2020
+# ------------------------------------------------
+
+package:
+    name: gevent
+    version: 20.9.0
+source:
+    fn: gevent-20.9.0.tar.gz
+    patches:
+        - 0001-Allow-include-flags-to-be-present-in-CFLAGS.patch
+    sha256: 5f6d48051d336561ec08995431ee4d265ac723a64bba99cc58c3eb1a4d4f5c8d
+    url: https://pypi.io/packages/source/g/gevent/gevent-20.9.0.tar.gz
+build:
+    number: '0'
+    script:
+        - /tmp/build/80754af9/gevent_1601397537062/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placeho/bin/python
+            -m pip install . --no-deps --ignore-installed -vvv
+    string: py38h7b6447c_0
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - make 4.2.1 h1bed415_1
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.7.22 0
+        - certifi 2020.6.20 py38_0
+        - cffi 1.14.3 py38he30daa8_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.2 py38_0
+        - pycparser 2.20 py_2
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 49.6.0 py38_1
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - cffi >=1.11.5
+        - greenlet >=0.4.14
+        - libgcc-ng >=7.3.0
+        - python >=3.8,<3.9.0a0
+        - setuptools
+        - zope.event
+        - zope.interface
+test:
+    commands:
+        - python -m pip check
+    imports:
+        - gevent
+        - gevent.libev
+    requires:
+        - pip
+about:
+    description: 'Gevent uses greenlet to provide a high-level synchronous API on
+        top of the libev event loop.
+
+        '
+    dev_url: https://github.com/gevent/gevent
+    doc_url: https://www.gevent.org/contents.html
+    home: https://www.gevent.org
+    license: MIT
+    license_family: MIT
+    license_file:
+        - LICENSE
+        - deps/c-ares/LICENSE.md
+        - deps/libev/LICENSE
+        - deps/libuv/LICENSE
+    summary: Coroutine-based network library
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - nehaljwani

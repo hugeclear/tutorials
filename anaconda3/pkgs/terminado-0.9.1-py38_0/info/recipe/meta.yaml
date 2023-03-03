@@ -1,0 +1,69 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/terminado-0.9.1-python_3.8-on-linux_64, last modified Fri Oct  9 22:00:49 2020
+# ------------------------------------------------
+
+package:
+    name: terminado
+    version: 0.9.1
+source:
+    sha256: 3da72a155b807b01c9e8a5babd214e052a0a45a975751da3521a1c3381ce6d76
+    url: https://pypi.io/packages/source/t/terminado/terminado-0.9.1.tar.gz
+build:
+    number: '0'
+    script: /tmp/build/80754af9/terminado_1602280956582/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_plac/bin/python
+        setup.py install
+    string: py38_0
+requirements:
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.7.22 0
+        - certifi 2020.6.20 py38_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - ptyprocess 0.6.0 py38_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 50.3.0 py38hb0f4dca_1
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - tornado 6.0.4 py38h7b6447c_1
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - ptyprocess
+        - python >=3.8,<3.9.0a0
+        - tornado >=4
+test:
+    commands:
+        - nosetests terminado
+    imports:
+        - terminado
+    requires:
+        - nose
+about:
+    description: 'Terminado is a Tornado websocket backend for the term.js Javascript
+
+        terminal emulator library.
+
+        '
+    dev_url: https://github.com/takluyver/terminado
+    doc_source_url: https://github.com/takluyver/terminado/blob/master/doc/index.rst
+    doc_url: http://terminado.readthedocs.org/en/latest/
+    home: https://github.com/jupyter/terminado
+    license: BSD-2-Clause
+    license_file: LICENSE
+    summary: Terminals served by tornado websockets
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - blink1073
+        - ocefpaf
+        - pelson
+        - takluyver

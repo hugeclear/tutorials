@@ -1,0 +1,72 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/unixodbc-2.3.9-on-linux_64, last modified Wed Oct 14 18:25:24 2020
+# ------------------------------------------------
+
+package:
+    name: unixodbc
+    version: 2.3.9
+source:
+    sha256: 52833eac3d681c8b0c9a5a65f2ebd745b3a964f208fc748f977e44015a31b207
+    url: http://www.unixodbc.org/unixODBC-2.3.9.tar.gz
+build:
+    number: '0'
+    run_exports:
+        - unixodbc >=2.3.9,<2.4.0a0
+    string: h7b6447c_0
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - autoconf 2.69 pl526hebd4dad_5
+        - automake 1.16.2 pl526_0
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - libtool 2.4.6 h7b6447c_1005
+        - m4 1.4.18 h4e445db_0
+        - make 4.2.1 h1bed415_1
+        - perl 5.26.2 h14c3975_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - flex 2.6.4 ha10e3a4_1
+        - libedit 3.1.20191231 h14c3975_1
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - m4 1.4.18 h4e445db_0
+        - ncurses 6.2 he6710b0_1
+    run:
+        - libedit >=3.1.20191231,<3.2.0a0
+        - libgcc-ng >=7.3.0
+test:
+    commands:
+        - test -f $PREFIX/lib/libodbc.so.2.0.0
+        - test -f $PREFIX/lib/libodbc.so
+        - test -f $PREFIX/lib/libodbcinst.so.2.0.0
+        - test -f $PREFIX/lib/libodbcinst.so
+        - isql --help
+        - iusql --help
+about:
+    description: 'The unixODBC Project goals are to develop and promote unixODBC to
+        be the
+
+        definitive standard for ODBC on non MS Windows platforms. This is to
+
+        include GUI support for both KDE and GNOME.
+
+        '
+    doc_url: http://www.unixodbc.org/doc/UserManual/
+    home: http://www.unixodbc.org/
+    license: LGPL-2.1
+    license_family: LGPL
+    license_file: COPYING
+    summary: ODBC on non MS Windows platforms
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - MathMagique
+        - xhochy

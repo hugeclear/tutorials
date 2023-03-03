@@ -1,0 +1,98 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Fri Oct  2 17:04:52 2020
+# ------------------------------------------------
+
+package:
+    name: pywavelets
+    version: 1.1.1
+source:
+    patches:
+        - pr522.patch
+    sha256: 1a64b40f6acb4ffbaccce0545d7fc641744f95351f62e4c6aaa40549326008c9
+    url: https://pypi.io/packages/source/P/PyWavelets/PyWavelets-1.1.1.tar.gz
+build:
+    number: '2'
+    script: /tmp/build/80754af9/pywavelets_1601658317819/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_pla/bin/python
+        -m pip install . --no-deps -vv
+    string: py38h7b6447c_2
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - blas 1.0 mkl
+        - ca-certificates 2020.7.22 0
+        - certifi 2020.6.20 py38_0
+        - cython 0.29.21 py38he6710b0_0
+        - intel-openmp 2020.2 254
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libgfortran-ng 7.3.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - mkl 2020.2 256
+        - mkl-service 2.3.0 py38he904b0f_0
+        - mkl_fft 1.2.0 py38h23d657b_0
+        - mkl_random 1.1.1 py38h0573a6f_0
+        - ncurses 6.2 he6710b0_1
+        - numpy 1.14.6 py38h056ac22_4
+        - numpy-base 1.14.6 py38hde5b4d6_4
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.3 py38_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 49.6.0 py38_1
+        - six 1.15.0 py_0
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - libgcc-ng >=7.3.0
+        - numpy >=1.14.6,<2.0a0
+        - python >=3.8,<3.9.0a0
+test:
+    imports:
+        - pywt
+    requires:
+        - pytest
+about:
+    description: 'PyWavelets is a free Open Source library for wavelet transforms
+        in Python.
+
+        Wavelets are mathematical basis functions that are localized in both time
+        and frequency.
+
+        Wavelet transforms are time-frequency transforms employing wavelets. They
+        are similar to
+
+        Fourier transforms, the difference being that Fourier transforms are localized
+        only in
+
+        frequency instead of in time and frequency.
+
+        '
+    dev_url: https://github.com/PyWavelets/pywt
+    doc_source_url: https://github.com/PyWavelets/pywt/tree/master/doc
+    doc_url: http://pywavelets.readthedocs.io/en/latest/
+    home: https://github.com/PyWavelets/pywt
+    license: MIT
+    license_file: LICENSE
+    summary: Discrete Wavelet Transforms in Python
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - grlee77
+        - jakirkham
+        - ocefpaf

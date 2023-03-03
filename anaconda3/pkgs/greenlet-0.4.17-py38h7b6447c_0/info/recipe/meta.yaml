@@ -1,0 +1,106 @@
+# This file created by conda-build 3.20.2
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Wed Sep 23 15:13:08 2020
+# ------------------------------------------------
+
+package:
+    name: greenlet
+    version: 0.4.17
+source:
+    fn: greenlet-0.4.17.tar.gz
+    sha256: 41d8835c69a78de718e466dd0e6bfd4b46125f21a67c3ff6d76d8d8059868d6b
+    url: https://pypi.io/packages/source/g/greenlet/greenlet-0.4.17.tar.gz
+build:
+    number: '0'
+    script: /tmp/build/80754af9/greenlet_1600874013538/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place/bin/python
+        -m pip install --no-deps --ignore-installed .
+    string: py38h7b6447c_0
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.7.22 0
+        - certifi 2020.6.20 py38_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.2 py38_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 49.6.0 py38_0
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - libgcc-ng >=7.3.0
+        - python >=3.8,<3.9.0a0
+test:
+    imports:
+        - greenlet
+about:
+    description: 'The greenlet package is a spin-off of Stackless, a version of CPython
+        that
+
+        supports micro-threads called "tasklets". Tasklets run pseudo-concurrently
+
+        (typically in a single or a few OS-level threads) and are synchronized with
+
+        data exchanges on "channels".
+
+
+        A "greenlet", on the other hand, is a still more primitive notion of
+
+        micro-thread with no implicit scheduling; coroutines, in other words. This
+
+        is useful when you want to control exactly when your code runs. You can
+
+        build custom scheduled micro-threads on top of greenlet; however, it seems
+
+        that greenlets are useful on their own as a way to make advanced control
+
+        flow structures. For example, we can recreate generators; the difference
+
+        with Python''s own generators is that our generators can call nested
+
+        functions and the nested functions can yield values too. Additionally,
+
+        you don''t need a "yield" keyword. See the example in
+
+        tests/test_generator.py.
+
+
+        Greenlets are provided as a C extension module for the regular unmodified
+
+        interpreter.
+
+
+        Greenlets are lightweight coroutines for in-process concurrent programming.
+
+        '
+    dev_url: https://github.com/python-greenlet/greenlet
+    doc_url: https://greenlet.readthedocs.io
+    home: https://github.com/python-greenlet/greenlet
+    license: MIT
+    license_family: MIT
+    license_file: LICENSE
+    summary: Lightweight in-process concurrent programming
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - curtisalexander
+        - nicoddemus

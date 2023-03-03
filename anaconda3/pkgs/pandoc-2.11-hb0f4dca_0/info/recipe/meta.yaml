@@ -1,0 +1,41 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/pandoc-2.11-on-linux_64, last modified Wed Oct 14 18:02:12 2020
+# ------------------------------------------------
+
+package:
+    name: pandoc
+    version: '2.11'
+source:
+    sha256: e6a30af35977f63fa044dcd488c90a03246968a8e9c15d88b7fa01b435e1a2e6
+    url: https://github.com/jgm/pandoc/releases/download/2.11/pandoc-2.11-linux-amd64.tar.gz
+build:
+    number: '0'
+    string: hb0f4dca_0
+test:
+    commands:
+        - pandoc --version
+        - pandoc --help
+about:
+    description: 'Pandoc is a Haskell library for converting from one markup format
+        to
+
+        another, and a command-line tool that uses this library.
+
+        '
+    dev_url: https://github.com/jgm/pandoc
+    doc_source_url: https://github.com/jgm/pandoc/tree/master/doc
+    doc_url: http://pandoc.org/MANUAL.html
+    home: http://pandoc.org/
+    license: GPL-2.0
+    license_family: GPL
+    license_file: LICENSE
+    summary: Universal markup converter (repackaged binaries)
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - dhimmel
+        - jankatins
+        - kiwi0fruit
+        - ocefpaf

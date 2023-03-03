@@ -1,0 +1,85 @@
+# This file created by conda-build 3.18.11
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/psutil-5.7.2-python_3.8-on-linux_64, last modified Tue Aug 25 15:41:58 2020
+# ------------------------------------------------
+
+package:
+    name: psutil
+    version: 5.7.2
+source:
+    fn: psutil-5.7.2.tar.gz
+    sha256: 90990af1c3c67195c44c9a889184f84f5b2320dce3ee3acbd054e3ba0b4a7beb
+    url: https://pypi.io/packages/source/p/psutil/psutil-5.7.2.tar.gz
+build:
+    number: '0'
+    script: python -m pip install --ignore-installed --no-deps .
+    string: py38h7b6447c_0
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.6.24 0
+        - certifi 2020.6.20 py38_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1g h7b6447c_0
+        - pip 20.2.2 py38_0
+        - python 3.8.5 hcff3b4d_0
+        - readline 8.0 h7b6447c_0
+        - setuptools 49.6.0 py38_0
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.34.2 py38_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - libgcc-ng >=7.3.0
+        - python >=3.8,<3.9.0a0
+test:
+    imports:
+        - psutil
+        - psutil._psutil_linux
+        - psutil._psutil_posix
+        - psutil.tests
+about:
+    description: 'psutil (process and system utilities) is a cross-platform library
+        for
+
+        retrieving information on running processes and system utilization (CPU,
+
+        memory, disks, network) in Python. It is useful mainly for system
+
+        monitoring, profiling and limiting process resources and management of
+
+        running processes.
+
+        '
+    dev_url: https://github.com/giampaolo/psutil
+    doc_source_url: https://github.com/giampaolo/psutil/blob/master/docs/index.rst
+    doc_url: http://pythonhosted.org/psutil/
+    home: https://github.com/giampaolo/psutil
+    license: BSD-3-Clause
+    license_family: BSD
+    license_file: LICENSE
+    summary: A cross-platform process and system utilities module for Python
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - gqmelo
+        - jakirkham
+        - jjhelmus
+        - nehaljwani
+        - pelson

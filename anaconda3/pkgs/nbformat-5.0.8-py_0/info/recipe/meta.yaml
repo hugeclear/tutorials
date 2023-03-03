@@ -1,0 +1,76 @@
+# This file created by conda-build 3.20.3
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Thu Oct 15 17:34:23 2020
+# ------------------------------------------------
+
+package:
+    name: nbformat
+    version: 5.0.8
+source:
+    sha256: f545b22138865bfbcc6b1ffe89ed5a2b8e2dc5d4fe876f2ca60d8e6f702a30f8
+    url: https://pypi.io/packages/source/n/nbformat/nbformat-5.0.8.tar.gz
+build:
+    entry_points:
+        - jupyter-trust = nbformat.sign:TrustNotebookApp.launch_instance
+    noarch: python
+    number: '0'
+    script: /tmp/build/80754af9/nbformat_1602783287752/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_place/bin/python
+        -m pip install . --no-deps -vv
+    string: py_0
+requirements:
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.10.14 0
+        - certifi 2020.6.20 py38_0
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.3 py38_0
+        - python 3.8.5 h7579374_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 50.3.0 py38hb0f4dca_1
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - ipython_genutils
+        - jsonschema >=2.4,!=2.5.0
+        - jupyter_core
+        - python >=3.5
+        - traitlets >=4.1
+test:
+    commands:
+        - pip check
+        - jupyter-trust -h
+    imports:
+        - nbformat
+    requires:
+        - pip
+about:
+    description: 'nbformat contains the reference implementation of the Jupyter Notebook
+
+        format, and Python APIs for working with notebooks.
+
+        '
+    dev_url: https://github.com/jupyter/nbformat
+    doc_url: http://nbformat.readthedocs.org
+    home: http://jupyter.org
+    license: BSD-3-Clause
+    license_file: COPYING.md
+    summary: The reference implementation of the Jupyter Notebook format
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - jakirkham
+        - minrk
+        - mpacer
+        - ocefpaf
+        - pelson
+        - takluyver

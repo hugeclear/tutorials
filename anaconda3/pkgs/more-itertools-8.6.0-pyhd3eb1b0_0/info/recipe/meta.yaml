@@ -1,0 +1,62 @@
+# This file created by conda-build 3.20.5
+# meta.yaml template originally from:
+# /tmp/build/80754af9/combined_recipe, last modified Wed Nov 11 16:18:41 2020
+# ------------------------------------------------
+
+package:
+    name: more-itertools
+    version: 8.6.0
+source:
+    sha256: b3a9005928e5bed54076e6e549c792b306fddfe72b2d1d22dd63d42d5d3899cf
+    url: https://pypi.io/packages/source/m/more-itertools/more-itertools-8.6.0.tar.gz
+build:
+    noarch: python
+    number: '0'
+    script: '/tmp/build/80754af9/more-itertools_1605111547926/_h_env_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold_placehold/bin/python
+        -m pip install . --no-deps --ignore-installed -vv '
+    string: pyhd3eb1b0_0
+requirements:
+    host:
+        - _libgcc_mutex 0.1 main
+        - ca-certificates 2020.10.14 0
+        - certifi 2020.6.20 pyhd3eb1b0_3
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libedit 3.1.20191231 h14c3975_1
+        - libffi 3.3 he6710b0_2
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - ncurses 6.2 he6710b0_1
+        - openssl 1.1.1h h7b6447c_0
+        - pip 20.2.4 py39h06a4308_0
+        - python 3.9.0 hcff3b4d_1
+        - readline 8.0 h7b6447c_0
+        - setuptools 50.3.1 py39h06a4308_1
+        - sqlite 3.33.0 h62c20be_0
+        - tk 8.6.10 hbc83047_0
+        - tzdata 2020d h14c3975_0
+        - wheel 0.35.1 py_0
+        - xz 5.2.5 h7b6447c_0
+        - zlib 1.2.11 h7b6447c_3
+    run:
+        - python >=3.4
+test:
+    commands:
+        - pip check
+    imports:
+        - more_itertools
+    requires:
+        - pip
+about:
+    dev_url: https://github.com/more-itertools/more-itertools
+    doc_url: https://more-itertools.readthedocs.io/en/latest/api.html
+    home: https://github.com/more-itertools/more-itertools
+    license: MIT
+    license_family: MIT
+    license_file: LICENSE
+    summary: More routines for operating on iterables, beyond itertools
+extra:
+    copy_test_source_files: true
+    final: true
+    recipe-maintainers:
+        - dbast
+        - pmlandwehr

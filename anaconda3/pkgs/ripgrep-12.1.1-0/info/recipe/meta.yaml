@@ -1,0 +1,37 @@
+# This file created by conda-build 3.20.2
+# meta.yaml template originally from:
+# /tmp/build/80754af9/rsync-recipes/ripgrep-12.1.1-on-linux_64/recipe, last modified Mon Sep 28 12:17:58 2020
+# ------------------------------------------------
+
+package:
+    name: ripgrep
+    version: 12.1.1
+source:
+    sha256: 2513338d61a5c12c8fea18a0387b3e0651079ef9b31f306050b1f0aaa926271e
+    url: https://github.com/BurntSushi/ripgrep/archive/12.1.1.tar.gz
+build:
+    missing_dso_whitelist:
+        - /usr/lib/libresolv.9.dylib
+    script:
+        - cargo build --release -v
+        - $STRIP target/release/rg
+        - mkdir $PREFIX/bin
+        - cp target/release/rg $PREFIX/bin/rg
+    string: '0'
+requirements:
+    build:
+        - _libgcc_mutex 0.1 main
+        - binutils_impl_linux-64 2.33.1 he6710b0_7
+        - binutils_linux-64 2.33.1 h9595d00_15
+        - gcc_impl_linux-64 7.3.0 habb00fd_1
+        - gcc_linux-64 7.3.0 h553295d_15
+        - gxx_impl_linux-64 7.3.0 hdf63c60_1
+        - gxx_linux-64 7.3.0 h553295d_15
+        - ld_impl_linux-64 2.33.1 h53a641e_7
+        - libgcc-ng 9.1.0 hdf63c60_0
+        - libstdcxx-ng 9.1.0 hdf63c60_0
+        - rust 1.46.0 0
+        - rust_linux-64 1.46.0 hf484d3e_0
+extra:
+    copy_test_source_files: true
+    final: true
